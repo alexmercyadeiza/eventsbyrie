@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Events by Rie",
-  description: "",
+  description: "Catering Re-imagined (where food becomes art).",
 };
 
 export default function RootLayout({ children }) {
