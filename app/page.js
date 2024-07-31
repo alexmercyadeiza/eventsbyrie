@@ -222,7 +222,7 @@ export default function Home() {
         <div className="w-full md:px-20">
           <div className="grid grid-cols-6 place-items-center gap-4 md:gap-0 rounded-t-3xl bg-morange overflow-hidden">
             <div
-              onClick={() => selectMenu("Sides")}
+              onClick={() => selectMenu("Sides", menu)}
               className={`${
                 category === "Sides" ? "bg-dorange" : ""
               } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
@@ -240,7 +240,7 @@ export default function Home() {
             </div>
 
             <div
-              onClick={() => selectMenu("Brunch")}
+              onClick={() => selectMenu("Brunch", menu)}
               className={`${
                 category === "Brunch" ? "bg-dorange" : ""
               } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
@@ -258,7 +258,7 @@ export default function Home() {
             </div>
 
             <div
-              onClick={() => selectMenu("Pasta")}
+              onClick={() => selectMenu("Pasta", menu)}
               className={`${
                 category === "Pasta" ? "bg-dorange" : ""
               } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
@@ -276,7 +276,7 @@ export default function Home() {
             </div>
 
             <div
-              onClick={() => selectMenu("Seafood")}
+              onClick={() => selectMenu("Seafood", menu)}
               className={`${
                 category === "Seafood" ? "bg-dorange" : ""
               } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
@@ -294,7 +294,7 @@ export default function Home() {
             </div>
 
             <div
-              onClick={() => selectMenu("Meat")}
+              onClick={() => selectMenu("Meat", menu)}
               className={`${
                 category === "Meat" ? "bg-dorange" : ""
               } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
@@ -312,7 +312,7 @@ export default function Home() {
             </div>
 
             <div
-              onClick={() => selectMenu("Desserts")}
+              onClick={() => selectMenu("Desserts", menu)}
               className={`${
                 category === "Desserts" ? "bg-dorange" : ""
               } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
