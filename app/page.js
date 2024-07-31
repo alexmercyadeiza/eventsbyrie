@@ -23,13 +23,12 @@ export default function Home() {
       }
     );
 
-    console.log(res.data.records);
     setMenu(res.data.records);
+    selectMenu("Sides", res.data.records);
   };
 
-  const selectMenu = (category) => {
+  const selectMenu = (category = "Sides", menu = menu) => {
     const data = menu.filter((item) => item.fields.Category === category);
-    console.log(category);
     setCategory(category);
     setSelectedMenu(data);
   };
@@ -107,10 +106,10 @@ export default function Home() {
           Plenty of vegetarian and vegan options!
         </div>
 
-        <div className="md:w-2/3">
+        <div className="md:w-2/3 w-full">
           <div className="grid md:grid-cols-2 gap-10 w-full">
             <div
-              className="grid md:h-96 h-56 w-96 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
+              className="grid md:h-96 h-56 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
               style={{
                 backgroundImage: `url('https://awstestbucket-pk.s3.eu-west-1.amazonaws.com/rie/corporate.jpg')`,
               }}
@@ -119,7 +118,7 @@ export default function Home() {
             </div>
 
             <div
-              className="grid md:h-96 h-56 w-96 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
+              className="grid md:h-96 h-56 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
               style={{
                 backgroundImage: `url('https://images.pexels.com/photos/169191/pexels-photo-169191.jpeg?auto=compress&cs=tinysrgb&w=1200')`,
               }}
@@ -128,7 +127,7 @@ export default function Home() {
             </div>
 
             <div
-              className="grid md:h-96 h-56 w-96 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
+              className="grid md:h-96 h-56 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
               style={{
                 backgroundImage: `url('https://cdn.pixabay.com/photo/2018/01/02/20/46/celebration-3057027_1280.jpg')`,
               }}
@@ -139,7 +138,7 @@ export default function Home() {
             </div>
 
             <div
-              className="grid md:h-96 h-56 w-96 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
+              className="grid md:h-96 h-56 md:w-auto place-items-center rounded-xl bg-black bg-opacity-50 bg-center bg-blend-overlay"
               style={{
                 backgroundImage: `url('https://cdn.pixabay.com/photo/2023/11/11/20/13/whisky-8381815_1280.jpg')`,
               }}
@@ -156,7 +155,7 @@ export default function Home() {
             <span className="text-xs text-dorange">&diams;</span> why RIE{" "}
             <span className="text-xs text-dorange">&diams;</span>
           </div>
-          <div className="text-5xl font-bold text-center md:text-left capitalize text-dorange">
+          <div className="md:text-5xl text-3xl font-bold text-center md:text-left capitalize text-dorange">
             Satisfaction Guaranteed
           </div>
         </div>
@@ -215,13 +214,13 @@ export default function Home() {
             <span className="text-xs text-dorange">&diams;</span> Explore Our
             Menu <span className="text-xs text-dorange">&diams;</span>
           </div>
-          <div className="text-center text-5xl font-bold capitalize text-dorange">
+          <div className="text-center md:text-5xl text-3xl font-bold capitalize text-dorange">
             Menu
           </div>
         </div>
 
         <div className="w-full md:px-20">
-          <div className="grid grid-cols-6 place-items-center gap-2 rounded-t-3xl bg-morange overflow-hidden">
+          <div className="grid grid-cols-6 place-items-center gap-4 md:gap-0 rounded-t-3xl bg-morange overflow-hidden">
             <div
               onClick={() => selectMenu("Sides")}
               className={`${
@@ -355,8 +354,8 @@ export default function Home() {
               Contact us
             </div>
             <div>
-              Need a quote or have a question? We&apos;re here to help! Drop us an
-              email or chat with us on WhatsApp.
+              Need a quote or have a question? We&apos;re here to help! Drop us
+              an email or chat with us on WhatsApp.
             </div>
           </div>
 
