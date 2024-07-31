@@ -56,9 +56,12 @@ export default function Home() {
             <span className="bg-dorange px-4">art</span>
           </div>
 
-          <div className="rounded-full bg-dorange px-10 py-5 text-lg font-semibold text-white">
+          <a
+            href="mailto:eventsbyrie@gmail.com"
+            className="rounded-full bg-dorange px-10 py-5 text-lg font-semibold text-white"
+          >
             Get a quote
-          </div>
+          </a>
         </div>
       </div>
 
@@ -377,7 +380,7 @@ export default function Home() {
 
           <a
             href="https://wa.me/2347077514857"
-            className="inline-flex space-x-3 rounded-full border-2 border-dorange p-2 px-6 text-xl font-semibold text-dorange"
+            className="inline-flex space-x-3 rounded-full border-2 border-dorange p-2 px-6 md:text-xl font-semibold text-dorange"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
