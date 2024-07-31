@@ -223,12 +223,12 @@ export default function Home() {
         </div>
 
         <div className="w-full md:px-20">
-          <div className="grid grid-cols-6 place-items-center gap-4 md:gap-0 rounded-t-3xl bg-morange overflow-hidden">
+          <div className="grid grid-cols-6 place-items-center gap-2 md:gap-0 rounded-t-3xl bg-morange overflow-hidden">
             <div
               onClick={() => selectMenu("Sides", menu)}
               className={`${
                 category === "Sides" ? "bg-dorange" : ""
-              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
+              } grid cursor-pointer place-items-center space-y-3 md:px-8 mx-2 px-2 py-8 h-full text-center`}
             >
               <img
                 className="w-[60%]"
@@ -246,7 +246,7 @@ export default function Home() {
               onClick={() => selectMenu("Brunch", menu)}
               className={`${
                 category === "Brunch" ? "bg-dorange" : ""
-              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
+              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-2 mx-2 py-8 h-full text-center`}
             >
               <img
                 className="w-[60%]"
@@ -264,7 +264,7 @@ export default function Home() {
               onClick={() => selectMenu("Pasta", menu)}
               className={`${
                 category === "Pasta" ? "bg-dorange" : ""
-              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
+              } grid cursor-pointer place-items-center space-y-3 md:px-8 mx-2 px-2 py-8 h-full text-center`}
             >
               <img
                 className="w-[80%]"
@@ -282,7 +282,7 @@ export default function Home() {
               onClick={() => selectMenu("Seafood", menu)}
               className={`${
                 category === "Seafood" ? "bg-dorange" : ""
-              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
+              } grid cursor-pointer place-items-center space-y-3 md:px-8 mx-2 px-2 py-8 h-full text-center`}
             >
               <img
                 className="w-[50%]"
@@ -300,7 +300,7 @@ export default function Home() {
               onClick={() => selectMenu("Meat", menu)}
               className={`${
                 category === "Meat" ? "bg-dorange" : ""
-              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
+              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-2 mx-2 py-8 h-full text-center`}
             >
               <img
                 className="w-[100%]"
@@ -318,7 +318,7 @@ export default function Home() {
               onClick={() => selectMenu("Desserts", menu)}
               className={`${
                 category === "Desserts" ? "bg-dorange" : ""
-              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-4 py-8 h-full text-center`}
+              } grid cursor-pointer place-items-center space-y-3 md:px-8 px-2 mx-2 py-8 h-full text-center`}
             >
               <img
                 className="w-[50%]"
