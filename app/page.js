@@ -50,7 +50,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="text-center md:text-7xl text-4xl font-bold leading-tight text-white">
+          <div className="text-center md:text-7xl text-5xl font-bold leading-tight text-white">
             Catering <span className="bg-dorange px-4">reimagined:</span> <br />
             where food becomes <br />
             <span className="bg-dorange px-4">art</span>
