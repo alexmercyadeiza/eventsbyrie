@@ -33,6 +33,45 @@ export default function Home() {
     setSelectedMenu(data);
   };
 
+  // Send email
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("Email sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("Failed to send email. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("An error occurred. Please try again.");
+    }
+  };
+
   return (
     <div className="min-h-full space-y-24 bg-lorange pb-20">
       <div
@@ -50,8 +89,11 @@ export default function Home() {
             />
           </div>
 
-          <div className="text-center md:text-7xl text-5xl font-bold leading-tight text-white">
-            Catering <span className="bg-dorange px-4">reimagined:</span> <br />
+          <div className="text-center md:text-7xl font-medium text-5xl leading-[60px] text-white">
+            <span className="font-bold">
+              Catering <span className="bg-dorange px-4">reimagined</span>
+            </span>
+            - <br />
             where food becomes <br />
             <span className="bg-dorange px-4">art</span>
           </div>
@@ -346,8 +388,18 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="px-8 space-y-2 md:px-20">
+        <div className="text-xl font-bold capitalize text-dorange">
+          Don&apos;t see something you need?
+        </div>
+        <div>
+          If a menu item you desire is not on the list, please reach out for
+          possible accommodation.
+        </div>
+      </div>
+
       <div className="grid place-items-center space-y-8 px-8">
-        <div className="space-y-8 text-center">
+        <div className="space-y-8 text-center grid place-items-center">
           <div className="space-y-2">
             <div className="font-semibold capitalize text-morange">
               <span className="text-xs text-dorange">&diams;</span> get in touch{" "}
@@ -362,7 +414,7 @@ export default function Home() {
             </div>
           </div>
 
-          <a
+          {/* <a
             href="mailto:eventsbyrie@gmail.com"
             className="inline-flex space-x-3 rounded-full border-2 border-dorange p-2 px-6 text-xl font-semibold text-dorange"
           >
@@ -374,11 +426,11 @@ export default function Home() {
               <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
             </svg>
             <div>Send us an email</div>
-          </a>
+          </a> */}
 
           <br />
 
-          <a
+          {/* <a
             href="https://wa.me/2347077514857"
             className="inline-flex space-x-3 rounded-full border-2 border-dorange p-2 px-6 md:text-xl font-semibold text-dorange"
           >
@@ -390,17 +442,84 @@ export default function Home() {
               <path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z" />
             </svg>
             <div>Chat with us on WhatsApp</div>
-          </a>
+          </a> */}
+
+          <form
+            onSubmit={handleSubmit}
+            className="md:w-2/4 w-full place-self-center space-y-4 md:space-y-8"
+          >
+            <div className="space-y-2">
+              <div className="text-left text-sm">Full Name</div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full rounded-xl bg-transparent ring-none focus:ring-0 border border-morange focus:border-dorange"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-left text-sm">Email</div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full rounded-xl bg-transparent ring-none focus:ring-0 border border-morange focus:border-dorange"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-left text-sm">Phone Number</div>
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full rounded-xl bg-transparent ring-none focus:ring-0 border border-morange focus:border-dorange"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-left text-sm">Message</div>
+              <textarea
+                type="text"
+                rows={6}
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full rounded-xl bg-transparent ring-none focus:ring-0 border border-morange focus:border-dorange"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="rounded-full bg-dorange px-10 py-5 text-lg font-semibold text-white"
+            >
+              Submit
+            </button>
+          </form>
+
+          <div>{status}</div>
         </div>
       </div>
 
-      <div className="grid place-items-center">
+      {/* <div className="grid place-items-center">
         <img
           src="https://awstestbucket-pk.s3.eu-west-1.amazonaws.com/rie/rielogo2.svg"
           className="w-14"
           alt=""
         />
-      </div>
+      </div> */}
 
       <div className="text-center text-sm">
         Copyright &copy; <span className="text-dorange">RIE</span> 2024. All
