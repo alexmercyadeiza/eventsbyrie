@@ -408,10 +408,7 @@ export default function Home() {
             <div className="text-5xl font-bold capitalize text-dorange">
               Contact us
             </div>
-            <div>
-              Need a quote or have a question? We&apos;re here to help! Drop us
-              an email or chat with us on WhatsApp.
-            </div>
+           
           </div>
 
           {/* <a
