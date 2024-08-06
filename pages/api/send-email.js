@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       // Send email
       await transporter.sendMail({
         from: `"Website Contact" <website@eventsbyrie.com>`,
-        to: "pikeconcept@gmail.com", // Replace with your default recipient
+        to: "preyewarde@gmail.com", // Replace with your default recipient
         subject: `New message from ${name}`,
         text: message,
         html: `<p><strong>From:</strong> ${name} (${email})</p>

@@ -398,8 +398,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid place-items-center space-y-8 px-8">
-        <div className="space-y-8 text-center grid place-items-center">
+      <div className="grid w-full place-items-center space-y-8 px-8">
+        <div className="space-y-8 w-full text-center grid place-items-center">
           <div className="space-y-2">
             <div className="font-semibold capitalize text-morange">
               <span className="text-xs text-dorange">&diams;</span> get in touch{" "}
@@ -443,7 +443,7 @@ export default function Home() {
 
           <form
             onSubmit={handleSubmit}
-            className="md:w-2/4 w-full place-self-center space-y-4 md:space-y-8"
+            className="w-full md:w-2/6 place-self-center space-y-4 md:space-y-8"
           >
             <div className="space-y-2">
               <div className="text-left text-sm">Full Name</div>
